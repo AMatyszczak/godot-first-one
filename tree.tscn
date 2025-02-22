@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://e12qt0kgt7ex"]
+
+[ext_resource type="Script" path="res://tree.gd" id="1_31ske"]
+[ext_resource type="PackedScene" uid="uid://q10rvakj7cw2" path="res://interactable.tscn" id="1_worx0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oumvi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y6k6v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pey1v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhfcn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kvabm"]
+
+[node name="Tree" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_31ske")
+
+[node name="TreePivot" type="Node3D" parent="."]
+
+[node name="trunk" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_oumvi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="trunk"]
+mesh = SubResource("CylinderMesh_y6k6v")
+skeleton = NodePath("../../TreePivot")
+
+[node name="crown" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+shape = SubResource("SphereShape3D_pey1v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="crown"]
+mesh = SubResource("SphereMesh_bhfcn")
+
+[node name="Interactable" parent="." instance=ExtResource("1_worx0")]
+transform = Transform3D(0.994278, 0, 0, 0, 0.994278, 0, 0, 0, 0.994278, 0, 0, 0)
+interact_name = "Pick up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("CylinderShape3D_kvabm")
