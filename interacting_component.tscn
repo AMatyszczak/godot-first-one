@@ -15,11 +15,10 @@ collision_mask = 2
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_0g7y6")
 
-[node name="InteractLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "E to interact
-"
+[node name="InteractLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+pixel_size = 0.03
+text = "E to interact"
 
 [connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
 [connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

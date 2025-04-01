@@ -27,8 +27,11 @@ transform = Transform3D(-2.18557e-08, 0.866025, -0.5, 3.78552e-08, 0.5, 0.866026
 [node name="Player" parent="." instance=ExtResource("1_oblp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52268, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 8.47732, 10)
-
 [node name="Tree" parent="." instance=ExtResource("2_o7llx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17212, 2.36848, 4.34862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="Tree2" parent="." instance=ExtResource("2_o7llx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 6.60483)
+
+[node name="Tree3" parent="." instance=ExtResource("2_o7llx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -7.70832)
